@@ -9,7 +9,10 @@ function App() {
 
   return (
     <div className="App">
-      { view ? <Commands onClick={() => setView(!view)} /> : <Editor onClick={() => setView(!view)} /> }
+      { 
+        view ? <Commands setView={() => setView(!view)} /> 
+        : <Editor setView={() => setView(!view)} /> 
+      }
     </div>
   );
 }
