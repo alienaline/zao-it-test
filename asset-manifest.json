@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/zao-it-test/static/css/main.2b5ece98.css",
-    "main.js": "/zao-it-test/static/js/main.ca15f300.js",
+    "main.js": "/zao-it-test/static/js/main.897fc880.js",
     "static/media/holder.jpg": "/zao-it-test/static/media/holder.fe8b8cd8275447e5ce04.jpg",
     "index.html": "/zao-it-test/index.html",
     "main.2b5ece98.css.map": "/zao-it-test/static/css/main.2b5ece98.css.map",
-    "main.ca15f300.js.map": "/zao-it-test/static/js/main.ca15f300.js.map"
+    "main.897fc880.js.map": "/zao-it-test/static/js/main.897fc880.js.map"
   },
   "entrypoints": [
     "static/css/main.2b5ece98.css",
-    "static/js/main.ca15f300.js"
+    "static/js/main.897fc880.js"
   ]
 }
