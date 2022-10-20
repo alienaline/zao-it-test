@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
-import { Badge } from 'react-bootstrap';
+import { Badge, Container } from 'react-bootstrap';
 
 function CommandCard(props) {
   const [isLoading, setLoading] = useState(false);
@@ -14,7 +14,7 @@ function CommandCard(props) {
     return (
       new Promise((resolve, reject) => {
         setTimeout(() => {
-          if (Math.random() > .7) {
+          if (Math.random() > .8) {
             resolve(true);
           } else {
             reject(false);
@@ -38,7 +38,9 @@ function CommandCard(props) {
 
   return (
     <Card bg='light' border='dark' style={{ width: '30rem', display: 'flex', flexDirection: 'row', margin: '15px 0'}}>
-      <Card.Img variant="top" src={props.img} style={{ maxWidth: '150px', borderRadius: '5px' }}/>
+    <Container style={{ width: '150px', height: '150px', padding: '0' }}>
+      <Card.Img variant="top" src={props.img} style={{ width: '100%', height: '100%', borderRadius: '5px', objectFit: 'cover' }}/>
+    </Container>
       <Card.Body style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <Card.Title>{props.commandName}</Card.Title>
         { resolve ? false : <Badge bg="danger">Не удалось выполнить</Badge>}

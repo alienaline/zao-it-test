@@ -5,7 +5,7 @@ import { Container, Button, Alert } from 'react-bootstrap';
 import holder from '../assets/img/holder.jpg';
 import PropTypes from 'prop-types';
 
-const hostUrl = 'https://alienaline.github.io/zao-it-test';
+const hostUrl = 'http://localhost:3001/cards';
 
 function Commands(props) {
     const [data, setData] = useState();
@@ -37,7 +37,7 @@ function Commands(props) {
                         <CommandCard
                             key={item.id} 
                             commandName={item.commandName}
-                            img={holder} />
+                            img={item.src ? item.src : holder} />
                     )
                     : <Alert variant='info'>Пока нет доступных команд</Alert>
                 }

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Container, Form, Alert } from 'react-bootstrap';
 
-const hostUrl = 'https://alienaline.github.io/zao-it-test';
+const hostUrl = 'http://localhost:3001/cards';
 
 function CommandForm() {
     const [commandName, setCommandName] = useState('');
     const [submited, setSubmited] = useState(false);
+    const [srcValue, setSrcValue] = useState();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const data = { commandName, file: 'src' };
+        const data = { commandName, src: srcValue };
 
         await fetch(hostUrl, {
             method: 'post',
@@ -26,11 +27,12 @@ function CommandForm() {
         <Container style={{ margin: '5rem auto' }}>
             { submited && <Alert variant='success'> Добавлено! </Alert> }
             <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formGroupImage">
-                    <Form.Label>Выберите изображение</Form.Label>
+                <Form.Group className="mb-3" controlId="formGroupUrl">
+                    <Form.Label>Введите ссылку на изображение</Form.Label>
                     <Form.Control 
-                        type="file" 
-                        accept='image/*,.jpg,.png' />
+                        type="url"
+                        value={srcValue} 
+                        onChange={(event) => setSrcValue(event.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formGroupName">
                     <Form.Label>Введите название команды</Form.Label>
