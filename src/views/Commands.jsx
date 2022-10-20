@@ -5,7 +5,7 @@ import { Container, Button, Alert } from 'react-bootstrap';
 import holder from '../assets/img/holder.jpg';
 import PropTypes from 'prop-types';
 
-const hostUrl = 'http://localhost:3001/cards';
+const hostUrl = 'https://alienaline.github.io/zao-it-test';
 
 function Commands(props) {
     const [data, setData] = useState();

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Container, Form, Alert } from 'react-bootstrap';
 
-const hostUrl = 'http://localhost:3001/cards';
+const hostUrl = 'https://alienaline.github.io/zao-it-test';
 
 function CommandForm() {
     const [commandName, setCommandName] = useState('');
